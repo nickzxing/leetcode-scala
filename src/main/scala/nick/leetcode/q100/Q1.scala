@@ -15,13 +15,13 @@ package nick.leetcode.q100
 object Q1 {
 
   def twoSum(nums: Array[Int], target: Int): Array[Int] = {
-    var map: Map[Int, Int] = Map()
+    var recordMap: Map[Int, Int] = Map()
     for (i <- 0 until (nums.length)) {
       val result: Int = target - nums(i);
-      if (map.contains(result)) {
-        return Array(map(result), i);
+      if (recordMap.contains(result)) {
+        return Array(recordMap(result), i);
       }
-      map += (nums(i) -> i)
+      recordMap += (nums(i) -> i)
     }
     return null
   }
